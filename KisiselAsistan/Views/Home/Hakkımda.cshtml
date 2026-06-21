@@ -2,3 +2,21 @@
     ViewData["Title"] = "Hakkımda";
 }
 
+@model KisiselAsistan.ViewModels.HakkimdaViewModel
+
+<h1>@Model.Ad @Model.Soyad</h1>
+<p>@Model.Unvan</p>
+<p>@Model.Ozet</p>
+
+@foreach (var proje in Model.Projeler)
+{
+    <h3>@proje.Ad</h3>
+    <p>@proje.Aciklama</p>
+    <p>@proje.GitHubUrl</p>
+    <p>@proje.CanlıUrl</p>
+
+    foreach ( var teknoloji in proje.Teknolojiler)
+    {
+        <p>@teknoloji</p>
+    }
+}
