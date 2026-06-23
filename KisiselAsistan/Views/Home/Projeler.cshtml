@@ -1,0 +1,22 @@
+﻿@{
+	ViewData["Title"] = "Projeler";
+}
+
+@model List<KisiselAsistan.ViewModels.ProjeViewModel>
+
+@foreach (var proje in Model)
+{
+	<div class="proje">
+		<h2>@proje.Ad</h2>
+		<p>@proje.Aciklama</p>
+		<p>GitHub: <a href="@proje.GitHubUrl">@proje.GitHubUrl</a></p>
+		<p>Canlı: <a href="@proje.CanlıUrl">@proje.CanlıUrl</a></p>
+		<h3>Teknolojiler:</h3>
+		<ul>
+			@foreach (var teknoloji in proje.Teknolojiler)
+			{
+				<li>@teknoloji</li>
+			}
+		</ul>
+	</div>
+}

@@ -1,0 +1,11 @@
+﻿@{
+	ViewData["Title"] = "İletişim";
+}
+
+@model KisiselAsistan.ViewModels.İletisimViewModel
+
+<a href="mailto:@Model.Email">Email</a>
+<a href="tel:@Model.Telefon">Telefon</a>
+<a href="@Model.GitHub" target="_blank">GitHub</a>
+<a href="@Model.Instagram" target="_blank">Instagram</a>
+<a href="@Model.LinkedIn" target="_blank">LinkedIn</a>	

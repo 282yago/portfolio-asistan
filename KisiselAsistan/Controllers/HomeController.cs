@@ -64,10 +64,41 @@ namespace KisiselAsistan.Controllers
             return View(model);
         }
 
-        public IActionResult Privacy()
+
+        public IActionResult Projeler()
+        {
+            List<ProjeViewModel> projeler = new List<ProjeViewModel>
+            {
+                new ProjeViewModel
+                {
+                    Ad = "Proje 1",
+                    Aciklama = "Proje 1 açıklaması",
+                    Teknolojiler = new List<string> { "C#", "ASP.NET Core" },
+                    CanlıUrl = "https://proje1.com",
+                    GitHubUrl = "https://github.com/282yago/proje1"
+                }
+            };
+
+            return View(projeler);
+        }
+        public IActionResult İletişim()
+        {
+            var model = new İletisimViewModel
+            {
+                Email = "yagiz1905tekin@gmail.com",
+                GitHub = "https://github.com/282yago",
+                Instagram = "https://www.instagram.com/yagiztkn_/",
+                LinkedIn = "https://www.linkedin.com/in/yagiztekin-software/",
+                Telefon = 05375873128
+            };
+
+            return View(model);
+        }
+        public IActionResult Asistan()
         {
             return View();
         }
+
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
